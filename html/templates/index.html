@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title> 数据库:{{db_name}}</title>
+    <style type="text/css">
+        table {
+            width: 90%;
+            background: #ccc;
+            margin: 10px auto;
+            border-collapse: collapse;
+        }
+
+        th, td {
+            height: 25px;
+            line-height: 25px;
+            text-align: center;
+            border: 1px solid #ccc;
+        }
+
+        th {
+            background: #eee;
+            font-weight: normal;
+        }
+
+        tr {
+            background: #fff;
+        }
+
+        tr:hover {
+            background: #cc0;
+        }
+
+        td tr {
+            color: #06f;
+            text-decoration: none;
+        }
+
+        td tr:hover {
+            color: #06f;
+            text-decoration: underline;
+        }
+    </style>
+</head>
+
+<body>
+<h1 align="center"> 数据库: <span style="color:red"> {{db_name}}【{{db_real_name}}】</span> &nbsp;共「{{table_count}}」张表</h1>
+
+{% for table in tables %}
+
+<p align="center"> 表: {{table.table_name}} </p>
+<table>
+    <tr>
+        <th>字段名</th>
+
+        <th>类型</th>
+
+        <th>索引</th>
+
+        <th>默认值</th>
+
+        <th>允许为空</th>
+
+        <th>注释</th>
+    </tr>
+    {% for d in table.table_fields %}
+    <tr>
+        <td>{{d.Field}}</td>
+
+        <td>{{d.Type}}</td>
+
+        <td>{{d.Key}}</td>
+
+        <td>{{d.Default}}</td>
+
+        <td>{{d.Null}}</td>
+
+        <td>{{d.Extra}}</td>
+    </tr>
+    {% endfor %}
+
+</table>
+<br>
+<br>
+
+{% endfor %}
+
+
+</body>
+
+</html>

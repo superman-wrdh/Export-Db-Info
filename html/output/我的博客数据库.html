@@ -1,0 +1,2291 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title> 数据库:我的博客数据库</title>
+    <style type="text/css">
+        table {
+            width: 90%;
+            background: #ccc;
+            margin: 10px auto;
+            border-collapse: collapse;
+        }
+
+        th, td {
+            height: 25px;
+            line-height: 25px;
+            text-align: center;
+            border: 1px solid #ccc;
+        }
+
+        th {
+            background: #eee;
+            font-weight: normal;
+        }
+
+        tr {
+            background: #fff;
+        }
+
+        tr:hover {
+            background: #cc0;
+        }
+
+        td tr {
+            color: #06f;
+            text-decoration: none;
+        }
+
+        td tr:hover {
+            color: #06f;
+            text-decoration: underline;
+        }
+    </style>
+</head>
+
+<body>
+<h1 align="center"> 数据库: <span style="color:red"> 我的博客数据库【study】</span> &nbsp;共「23」张表</h1>
+
+
+
+<p align="center"> 表: album </p>
+<table>
+    <tr>
+        <th>字段名</th>
+
+        <th>类型</th>
+
+        <th>索引</th>
+
+        <th>默认值</th>
+
+        <th>允许为空</th>
+
+        <th>注释</th>
+    </tr>
+    
+    <tr>
+        <td>id</td>
+
+        <td>varchar(36)</td>
+
+        <td>PRI</td>
+
+        <td>None</td>
+
+        <td>NO</td>
+
+        <td></td>
+    </tr>
+    
+    <tr>
+        <td>name</td>
+
+        <td>varchar(100)</td>
+
+        <td></td>
+
+        <td>None</td>
+
+        <td>NO</td>
+
+        <td></td>
+    </tr>
+    
+    <tr>
+        <td>release_date</td>
+
+        <td>date</td>
+
+        <td></td>
+
+        <td>None</td>
+
+        <td>NO</td>
+
+        <td></td>
+    </tr>
+    
+    <tr>
+        <td>num_stars</td>
+
+        <td>int(11)</td>
+
+        <td></td>
+
+        <td>None</td>
+
+        <td>NO</td>
+
+        <td></td>
+    </tr>
+    
+    <tr>
+        <td>artist_id</td>
+
+        <td>varchar(36)</td>
+
+        <td>MUL</td>
+
+        <td>None</td>
+
+        <td>NO</td>
+
+        <td></td>
+    </tr>
+    
+
+</table>
+<br>
+<br>
+
+
+
+<p align="center"> 表: auth_group </p>
+<table>
+    <tr>
+        <th>字段名</th>
+
+        <th>类型</th>
+
+        <th>索引</th>
+
+        <th>默认值</th>
+
+        <th>允许为空</th>
+
+        <th>注释</th>
+    </tr>
+    
+    <tr>
+        <td>id</td>
+
+        <td>int(11)</td>
+
+        <td>PRI</td>
+
+        <td>None</td>
+
+        <td>NO</td>
+
+        <td></td>
+    </tr>
+    
+    <tr>
+        <td>name</td>
+
+        <td>varchar(80)</td>
+
+        <td>UNI</td>
+
+        <td>None</td>
+
+        <td>NO</td>
+
+        <td></td>
+    </tr>
+    
+
+</table>
+<br>
+<br>
+
+
+
+<p align="center"> 表: auth_group_permissions </p>
+<table>
+    <tr>
+        <th>字段名</th>
+
+        <th>类型</th>
+
+        <th>索引</th>
+
+        <th>默认值</th>
+
+        <th>允许为空</th>
+
+        <th>注释</th>
+    </tr>
+    
+    <tr>
+        <td>id</td>
+
+        <td>int(11)</td>
+
+        <td>PRI</td>
+
+        <td>None</td>
+
+        <td>NO</td>
+
+        <td></td>
+    </tr>
+    
+    <tr>
+        <td>group_id</td>
+
+        <td>int(11)</td>
+
+        <td>MUL</td>
+
+        <td>None</td>
+
+        <td>NO</td>
+
+        <td></td>
+    </tr>
+    
+    <tr>
+        <td>permission_id</td>
+
+        <td>int(11)</td>
+
+        <td>MUL</td>
+
+        <td>None</td>
+
+        <td>NO</td>
+
+        <td></td>
+    </tr>
+    
+
+</table>
+<br>
+<br>
+
+
+
+<p align="center"> 表: auth_permission </p>
+<table>
+    <tr>
+        <th>字段名</th>
+
+        <th>类型</th>
+
+        <th>索引</th>
+
+        <th>默认值</th>
+
+        <th>允许为空</th>
+
+        <th>注释</th>
+    </tr>
+    
+    <tr>
+        <td>id</td>
+
+        <td>int(11)</td>
+
+        <td>PRI</td>
+
+        <td>None</td>
+
+        <td>NO</td>
+
+        <td></td>
+    </tr>
+    
+    <tr>
+        <td>name</td>
+
+        <td>varchar(255)</td>
+
+        <td></td>
+
+        <td>None</td>
+
+        <td>NO</td>
+
+        <td></td>
+    </tr>
+    
+    <tr>
+        <td>content_type_id</td>
+
+        <td>int(11)</td>
+
+        <td>MUL</td>
+
+        <td>None</td>
+
+        <td>NO</td>
+
+        <td></td>
+    </tr>
+    
+    <tr>
+        <td>codename</td>
+
+        <td>varchar(100)</td>
+
+        <td></td>
+
+        <td>None</td>
+
+        <td>NO</td>
+
+        <td></td>
+    </tr>
+    
+
+</table>
+<br>
+<br>
+
+
+
+<p align="center"> 表: auth_user </p>
+<table>
+    <tr>
+        <th>字段名</th>
+
+        <th>类型</th>
+
+        <th>索引</th>
+
+        <th>默认值</th>
+
+        <th>允许为空</th>
+
+        <th>注释</th>
+    </tr>
+    
+    <tr>
+        <td>id</td>
+
+        <td>int(11)</td>
+
+        <td>PRI</td>
+
+        <td>None</td>
+
+        <td>NO</td>
+
+        <td></td>
+    </tr>
+    
+    <tr>
+        <td>password</td>
+
+        <td>varchar(128)</td>
+
+        <td></td>
+
+        <td>None</td>
+
+        <td>NO</td>
+
+        <td></td>
+    </tr>
+    
+    <tr>
+        <td>last_login</td>
+
+        <td>datetime(6)</td>
+
+        <td></td>
+
+        <td>None</td>
+
+        <td>YES</td>
+
+        <td></td>
+    </tr>
+    
+    <tr>
+        <td>is_superuser</td>
+
+        <td>tinyint(1)</td>
+
+        <td></td>
+
+        <td>None</td>
+
+        <td>NO</td>
+
+        <td></td>
+    </tr>
+    
+    <tr>
+        <td>username</td>
+
+        <td>varchar(150)</td>
+
+        <td>UNI</td>
+
+        <td>None</td>
+
+        <td>NO</td>
+
+        <td></td>
+    </tr>
+    
+    <tr>
+        <td>first_name</td>
+
+        <td>varchar(30)</td>
+
+        <td></td>
+
+        <td>None</td>
+
+        <td>NO</td>
+
+        <td></td>
+    </tr>
+    
+    <tr>
+        <td>last_name</td>
+
+        <td>varchar(150)</td>
+
+        <td></td>
+
+        <td>None</td>
+
+        <td>NO</td>
+
+        <td></td>
+    </tr>
+    
+    <tr>
+        <td>email</td>
+
+        <td>varchar(254)</td>
+
+        <td></td>
+
+        <td>None</td>
+
+        <td>NO</td>
+
+        <td></td>
+    </tr>
+    
+    <tr>
+        <td>is_staff</td>
+
+        <td>tinyint(1)</td>
+
+        <td></td>
+
+        <td>None</td>
+
+        <td>NO</td>
+
+        <td></td>
+    </tr>
+    
+    <tr>
+        <td>is_active</td>
+
+        <td>tinyint(1)</td>
+
+        <td></td>
+
+        <td>None</td>
+
+        <td>NO</td>
+
+        <td></td>
+    </tr>
+    
+    <tr>
+        <td>date_joined</td>
+
+        <td>datetime(6)</td>
+
+        <td></td>
+
+        <td>None</td>
+
+        <td>NO</td>
+
+        <td></td>
+    </tr>
+    
+
+</table>
+<br>
+<br>
+
+
+
+<p align="center"> 表: auth_user_groups </p>
+<table>
+    <tr>
+        <th>字段名</th>
+
+        <th>类型</th>
+
+        <th>索引</th>
+
+        <th>默认值</th>
+
+        <th>允许为空</th>
+
+        <th>注释</th>
+    </tr>
+    
+    <tr>
+        <td>id</td>
+
+        <td>int(11)</td>
+
+        <td>PRI</td>
+
+        <td>None</td>
+
+        <td>NO</td>
+
+        <td></td>
+    </tr>
+    
+    <tr>
+        <td>user_id</td>
+
+        <td>int(11)</td>
+
+        <td>MUL</td>
+
+        <td>None</td>
+
+        <td>NO</td>
+
+        <td></td>
+    </tr>
+    
+    <tr>
+        <td>group_id</td>
+
+        <td>int(11)</td>
+
+        <td>MUL</td>
+
+        <td>None</td>
+
+        <td>NO</td>
+
+        <td></td>
+    </tr>
+    
+
+</table>
+<br>
+<br>
+
+
+
+<p align="center"> 表: auth_user_user_permissions </p>
+<table>
+    <tr>
+        <th>字段名</th>
+
+        <th>类型</th>
+
+        <th>索引</th>
+
+        <th>默认值</th>
+
+        <th>允许为空</th>
+
+        <th>注释</th>
+    </tr>
+    
+    <tr>
+        <td>id</td>
+
+        <td>int(11)</td>
+
+        <td>PRI</td>
+
+        <td>None</td>
+
+        <td>NO</td>
+
+        <td></td>
+    </tr>
+    
+    <tr>
+        <td>user_id</td>
+
+        <td>int(11)</td>
+
+        <td>MUL</td>
+
+        <td>None</td>
+
+        <td>NO</td>
+
+        <td></td>
+    </tr>
+    
+    <tr>
+        <td>permission_id</td>
+
+        <td>int(11)</td>
+
+        <td>MUL</td>
+
+        <td>None</td>
+
+        <td>NO</td>
+
+        <td></td>
+    </tr>
+    
+
+</table>
+<br>
+<br>
+
+
+
+<p align="center"> 表: blog </p>
+<table>
+    <tr>
+        <th>字段名</th>
+
+        <th>类型</th>
+
+        <th>索引</th>
+
+        <th>默认值</th>
+
+        <th>允许为空</th>
+
+        <th>注释</th>
+    </tr>
+    
+    <tr>
+        <td>id</td>
+
+        <td>varchar(36)</td>
+
+        <td>PRI</td>
+
+        <td>None</td>
+
+        <td>NO</td>
+
+        <td></td>
+    </tr>
+    
+    <tr>
+        <td>title</td>
+
+        <td>varchar(128)</td>
+
+        <td></td>
+
+        <td>None</td>
+
+        <td>NO</td>
+
+        <td></td>
+    </tr>
+    
+    <tr>
+        <td>key_world</td>
+
+        <td>varchar(128)</td>
+
+        <td></td>
+
+        <td>None</td>
+
+        <td>NO</td>
+
+        <td></td>
+    </tr>
+    
+    <tr>
+        <td>summary</td>
+
+        <td>varchar(256)</td>
+
+        <td></td>
+
+        <td>None</td>
+
+        <td>NO</td>
+
+        <td></td>
+    </tr>
+    
+    <tr>
+        <td>content</td>
+
+        <td>longtext</td>
+
+        <td></td>
+
+        <td>None</td>
+
+        <td>NO</td>
+
+        <td></td>
+    </tr>
+    
+    <tr>
+        <td>created_date</td>
+
+        <td>datetime(6)</td>
+
+        <td></td>
+
+        <td>None</td>
+
+        <td>NO</td>
+
+        <td></td>
+    </tr>
+    
+    <tr>
+        <td>updated_time</td>
+
+        <td>datetime(6)</td>
+
+        <td></td>
+
+        <td>None</td>
+
+        <td>NO</td>
+
+        <td></td>
+    </tr>
+    
+    <tr>
+        <td>blog_type_id</td>
+
+        <td>varchar(36)</td>
+
+        <td>MUL</td>
+
+        <td>None</td>
+
+        <td>NO</td>
+
+        <td></td>
+    </tr>
+    
+    <tr>
+        <td>bloger_id</td>
+
+        <td>varchar(36)</td>
+
+        <td>MUL</td>
+
+        <td>None</td>
+
+        <td>NO</td>
+
+        <td></td>
+    </tr>
+    
+
+</table>
+<br>
+<br>
+
+
+
+<p align="center"> 表: blog_bloger </p>
+<table>
+    <tr>
+        <th>字段名</th>
+
+        <th>类型</th>
+
+        <th>索引</th>
+
+        <th>默认值</th>
+
+        <th>允许为空</th>
+
+        <th>注释</th>
+    </tr>
+    
+    <tr>
+        <td>id</td>
+
+        <td>varchar(36)</td>
+
+        <td>PRI</td>
+
+        <td>None</td>
+
+        <td>NO</td>
+
+        <td></td>
+    </tr>
+    
+    <tr>
+        <td>name</td>
+
+        <td>varchar(128)</td>
+
+        <td></td>
+
+        <td>None</td>
+
+        <td>NO</td>
+
+        <td></td>
+    </tr>
+    
+
+</table>
+<br>
+<br>
+
+
+
+<p align="center"> 表: blog_comment </p>
+<table>
+    <tr>
+        <th>字段名</th>
+
+        <th>类型</th>
+
+        <th>索引</th>
+
+        <th>默认值</th>
+
+        <th>允许为空</th>
+
+        <th>注释</th>
+    </tr>
+    
+    <tr>
+        <td>id</td>
+
+        <td>varchar(36)</td>
+
+        <td>PRI</td>
+
+        <td>None</td>
+
+        <td>NO</td>
+
+        <td></td>
+    </tr>
+    
+
+</table>
+<br>
+<br>
+
+
+
+<p align="center"> 表: blog_link </p>
+<table>
+    <tr>
+        <th>字段名</th>
+
+        <th>类型</th>
+
+        <th>索引</th>
+
+        <th>默认值</th>
+
+        <th>允许为空</th>
+
+        <th>注释</th>
+    </tr>
+    
+    <tr>
+        <td>id</td>
+
+        <td>varchar(36)</td>
+
+        <td>PRI</td>
+
+        <td>None</td>
+
+        <td>NO</td>
+
+        <td></td>
+    </tr>
+    
+
+</table>
+<br>
+<br>
+
+
+
+<p align="center"> 表: blog_loginrecord </p>
+<table>
+    <tr>
+        <th>字段名</th>
+
+        <th>类型</th>
+
+        <th>索引</th>
+
+        <th>默认值</th>
+
+        <th>允许为空</th>
+
+        <th>注释</th>
+    </tr>
+    
+    <tr>
+        <td>id</td>
+
+        <td>varchar(36)</td>
+
+        <td>PRI</td>
+
+        <td>None</td>
+
+        <td>NO</td>
+
+        <td></td>
+    </tr>
+    
+
+</table>
+<br>
+<br>
+
+
+
+<p align="center"> 表: blog_property </p>
+<table>
+    <tr>
+        <th>字段名</th>
+
+        <th>类型</th>
+
+        <th>索引</th>
+
+        <th>默认值</th>
+
+        <th>允许为空</th>
+
+        <th>注释</th>
+    </tr>
+    
+    <tr>
+        <td>id</td>
+
+        <td>varchar(36)</td>
+
+        <td>PRI</td>
+
+        <td>None</td>
+
+        <td>NO</td>
+
+        <td></td>
+    </tr>
+    
+
+</table>
+<br>
+<br>
+
+
+
+<p align="center"> 表: blog_searchworld </p>
+<table>
+    <tr>
+        <th>字段名</th>
+
+        <th>类型</th>
+
+        <th>索引</th>
+
+        <th>默认值</th>
+
+        <th>允许为空</th>
+
+        <th>注释</th>
+    </tr>
+    
+    <tr>
+        <td>id</td>
+
+        <td>varchar(36)</td>
+
+        <td>PRI</td>
+
+        <td>None</td>
+
+        <td>NO</td>
+
+        <td></td>
+    </tr>
+    
+
+</table>
+<br>
+<br>
+
+
+
+<p align="center"> 表: blog_type </p>
+<table>
+    <tr>
+        <th>字段名</th>
+
+        <th>类型</th>
+
+        <th>索引</th>
+
+        <th>默认值</th>
+
+        <th>允许为空</th>
+
+        <th>注释</th>
+    </tr>
+    
+    <tr>
+        <td>id</td>
+
+        <td>varchar(36)</td>
+
+        <td>PRI</td>
+
+        <td>None</td>
+
+        <td>NO</td>
+
+        <td></td>
+    </tr>
+    
+    <tr>
+        <td>name</td>
+
+        <td>varchar(128)</td>
+
+        <td></td>
+
+        <td>None</td>
+
+        <td>NO</td>
+
+        <td></td>
+    </tr>
+    
+    <tr>
+        <td>order</td>
+
+        <td>int(11)</td>
+
+        <td></td>
+
+        <td>None</td>
+
+        <td>NO</td>
+
+        <td></td>
+    </tr>
+    
+
+</table>
+<br>
+<br>
+
+
+
+<p align="center"> 表: django_admin_log </p>
+<table>
+    <tr>
+        <th>字段名</th>
+
+        <th>类型</th>
+
+        <th>索引</th>
+
+        <th>默认值</th>
+
+        <th>允许为空</th>
+
+        <th>注释</th>
+    </tr>
+    
+    <tr>
+        <td>id</td>
+
+        <td>int(11)</td>
+
+        <td>PRI</td>
+
+        <td>None</td>
+
+        <td>NO</td>
+
+        <td></td>
+    </tr>
+    
+    <tr>
+        <td>action_time</td>
+
+        <td>datetime(6)</td>
+
+        <td></td>
+
+        <td>None</td>
+
+        <td>NO</td>
+
+        <td></td>
+    </tr>
+    
+    <tr>
+        <td>object_id</td>
+
+        <td>longtext</td>
+
+        <td></td>
+
+        <td>None</td>
+
+        <td>YES</td>
+
+        <td></td>
+    </tr>
+    
+    <tr>
+        <td>object_repr</td>
+
+        <td>varchar(200)</td>
+
+        <td></td>
+
+        <td>None</td>
+
+        <td>NO</td>
+
+        <td></td>
+    </tr>
+    
+    <tr>
+        <td>action_flag</td>
+
+        <td>smallint(5) unsigned</td>
+
+        <td></td>
+
+        <td>None</td>
+
+        <td>NO</td>
+
+        <td></td>
+    </tr>
+    
+    <tr>
+        <td>change_message</td>
+
+        <td>longtext</td>
+
+        <td></td>
+
+        <td>None</td>
+
+        <td>NO</td>
+
+        <td></td>
+    </tr>
+    
+    <tr>
+        <td>content_type_id</td>
+
+        <td>int(11)</td>
+
+        <td>MUL</td>
+
+        <td>None</td>
+
+        <td>YES</td>
+
+        <td></td>
+    </tr>
+    
+    <tr>
+        <td>user_id</td>
+
+        <td>int(11)</td>
+
+        <td>MUL</td>
+
+        <td>None</td>
+
+        <td>NO</td>
+
+        <td></td>
+    </tr>
+    
+
+</table>
+<br>
+<br>
+
+
+
+<p align="center"> 表: django_content_type </p>
+<table>
+    <tr>
+        <th>字段名</th>
+
+        <th>类型</th>
+
+        <th>索引</th>
+
+        <th>默认值</th>
+
+        <th>允许为空</th>
+
+        <th>注释</th>
+    </tr>
+    
+    <tr>
+        <td>id</td>
+
+        <td>int(11)</td>
+
+        <td>PRI</td>
+
+        <td>None</td>
+
+        <td>NO</td>
+
+        <td></td>
+    </tr>
+    
+    <tr>
+        <td>app_label</td>
+
+        <td>varchar(100)</td>
+
+        <td>MUL</td>
+
+        <td>None</td>
+
+        <td>NO</td>
+
+        <td></td>
+    </tr>
+    
+    <tr>
+        <td>model</td>
+
+        <td>varchar(100)</td>
+
+        <td></td>
+
+        <td>None</td>
+
+        <td>NO</td>
+
+        <td></td>
+    </tr>
+    
+
+</table>
+<br>
+<br>
+
+
+
+<p align="center"> 表: django_migrations </p>
+<table>
+    <tr>
+        <th>字段名</th>
+
+        <th>类型</th>
+
+        <th>索引</th>
+
+        <th>默认值</th>
+
+        <th>允许为空</th>
+
+        <th>注释</th>
+    </tr>
+    
+    <tr>
+        <td>id</td>
+
+        <td>int(11)</td>
+
+        <td>PRI</td>
+
+        <td>None</td>
+
+        <td>NO</td>
+
+        <td></td>
+    </tr>
+    
+    <tr>
+        <td>app</td>
+
+        <td>varchar(255)</td>
+
+        <td></td>
+
+        <td>None</td>
+
+        <td>NO</td>
+
+        <td></td>
+    </tr>
+    
+    <tr>
+        <td>name</td>
+
+        <td>varchar(255)</td>
+
+        <td></td>
+
+        <td>None</td>
+
+        <td>NO</td>
+
+        <td></td>
+    </tr>
+    
+    <tr>
+        <td>applied</td>
+
+        <td>datetime(6)</td>
+
+        <td></td>
+
+        <td>None</td>
+
+        <td>NO</td>
+
+        <td></td>
+    </tr>
+    
+
+</table>
+<br>
+<br>
+
+
+
+<p align="center"> 表: django_session </p>
+<table>
+    <tr>
+        <th>字段名</th>
+
+        <th>类型</th>
+
+        <th>索引</th>
+
+        <th>默认值</th>
+
+        <th>允许为空</th>
+
+        <th>注释</th>
+    </tr>
+    
+    <tr>
+        <td>session_key</td>
+
+        <td>varchar(40)</td>
+
+        <td>PRI</td>
+
+        <td>None</td>
+
+        <td>NO</td>
+
+        <td></td>
+    </tr>
+    
+    <tr>
+        <td>session_data</td>
+
+        <td>longtext</td>
+
+        <td></td>
+
+        <td>None</td>
+
+        <td>NO</td>
+
+        <td></td>
+    </tr>
+    
+    <tr>
+        <td>expire_date</td>
+
+        <td>datetime(6)</td>
+
+        <td>MUL</td>
+
+        <td>None</td>
+
+        <td>NO</td>
+
+        <td></td>
+    </tr>
+    
+
+</table>
+<br>
+<br>
+
+
+
+<p align="center"> 表: musician </p>
+<table>
+    <tr>
+        <th>字段名</th>
+
+        <th>类型</th>
+
+        <th>索引</th>
+
+        <th>默认值</th>
+
+        <th>允许为空</th>
+
+        <th>注释</th>
+    </tr>
+    
+    <tr>
+        <td>id</td>
+
+        <td>varchar(36)</td>
+
+        <td>PRI</td>
+
+        <td>None</td>
+
+        <td>NO</td>
+
+        <td></td>
+    </tr>
+    
+    <tr>
+        <td>first_name</td>
+
+        <td>varchar(50)</td>
+
+        <td></td>
+
+        <td>None</td>
+
+        <td>NO</td>
+
+        <td></td>
+    </tr>
+    
+    <tr>
+        <td>last_name</td>
+
+        <td>varchar(50)</td>
+
+        <td></td>
+
+        <td>None</td>
+
+        <td>NO</td>
+
+        <td></td>
+    </tr>
+    
+    <tr>
+        <td>instrument</td>
+
+        <td>varchar(100)</td>
+
+        <td></td>
+
+        <td>None</td>
+
+        <td>NO</td>
+
+        <td></td>
+    </tr>
+    
+
+</table>
+<br>
+<br>
+
+
+
+<p align="center"> 表: resource </p>
+<table>
+    <tr>
+        <th>字段名</th>
+
+        <th>类型</th>
+
+        <th>索引</th>
+
+        <th>默认值</th>
+
+        <th>允许为空</th>
+
+        <th>注释</th>
+    </tr>
+    
+    <tr>
+        <td>id</td>
+
+        <td>varchar(36)</td>
+
+        <td>PRI</td>
+
+        <td>None</td>
+
+        <td>NO</td>
+
+        <td></td>
+    </tr>
+    
+    <tr>
+        <td>type</td>
+
+        <td>int(11)</td>
+
+        <td></td>
+
+        <td>None</td>
+
+        <td>NO</td>
+
+        <td></td>
+    </tr>
+    
+    <tr>
+        <td>mime_type</td>
+
+        <td>varchar(64)</td>
+
+        <td></td>
+
+        <td>None</td>
+
+        <td>NO</td>
+
+        <td></td>
+    </tr>
+    
+    <tr>
+        <td>reference_id</td>
+
+        <td>varchar(36)</td>
+
+        <td></td>
+
+        <td>None</td>
+
+        <td>NO</td>
+
+        <td></td>
+    </tr>
+    
+    <tr>
+        <td>name</td>
+
+        <td>varchar(255)</td>
+
+        <td></td>
+
+        <td>None</td>
+
+        <td>NO</td>
+
+        <td></td>
+    </tr>
+    
+    <tr>
+        <td>original_file_name</td>
+
+        <td>varchar(255)</td>
+
+        <td></td>
+
+        <td>None</td>
+
+        <td>NO</td>
+
+        <td></td>
+    </tr>
+    
+    <tr>
+        <td>description</td>
+
+        <td>varchar(255)</td>
+
+        <td></td>
+
+        <td>None</td>
+
+        <td>NO</td>
+
+        <td></td>
+    </tr>
+    
+    <tr>
+        <td>extension</td>
+
+        <td>varchar(30)</td>
+
+        <td></td>
+
+        <td>None</td>
+
+        <td>NO</td>
+
+        <td></td>
+    </tr>
+    
+    <tr>
+        <td>storage_type</td>
+
+        <td>varchar(30)</td>
+
+        <td></td>
+
+        <td>None</td>
+
+        <td>NO</td>
+
+        <td></td>
+    </tr>
+    
+    <tr>
+        <td>storage_param</td>
+
+        <td>varchar(255)</td>
+
+        <td></td>
+
+        <td>None</td>
+
+        <td>NO</td>
+
+        <td></td>
+    </tr>
+    
+    <tr>
+        <td>size</td>
+
+        <td>int(11)</td>
+
+        <td></td>
+
+        <td>None</td>
+
+        <td>NO</td>
+
+        <td></td>
+    </tr>
+    
+    <tr>
+        <td>is_public</td>
+
+        <td>tinyint(1)</td>
+
+        <td></td>
+
+        <td>None</td>
+
+        <td>NO</td>
+
+        <td></td>
+    </tr>
+    
+    <tr>
+        <td>created_time</td>
+
+        <td>datetime(6)</td>
+
+        <td></td>
+
+        <td>None</td>
+
+        <td>NO</td>
+
+        <td></td>
+    </tr>
+    
+
+</table>
+<br>
+<br>
+
+
+
+<p align="center"> 表: user_info </p>
+<table>
+    <tr>
+        <th>字段名</th>
+
+        <th>类型</th>
+
+        <th>索引</th>
+
+        <th>默认值</th>
+
+        <th>允许为空</th>
+
+        <th>注释</th>
+    </tr>
+    
+    <tr>
+        <td>id</td>
+
+        <td>bigint(20)</td>
+
+        <td>PRI</td>
+
+        <td>None</td>
+
+        <td>NO</td>
+
+        <td></td>
+    </tr>
+    
+    <tr>
+        <td>Name</td>
+
+        <td>varchar(128)</td>
+
+        <td></td>
+
+        <td>None</td>
+
+        <td>NO</td>
+
+        <td></td>
+    </tr>
+    
+    <tr>
+        <td>CardNo</td>
+
+        <td>varchar(32)</td>
+
+        <td></td>
+
+        <td>None</td>
+
+        <td>NO</td>
+
+        <td></td>
+    </tr>
+    
+    <tr>
+        <td>Descriot</td>
+
+        <td>varchar(512)</td>
+
+        <td></td>
+
+        <td>None</td>
+
+        <td>NO</td>
+
+        <td></td>
+    </tr>
+    
+    <tr>
+        <td>CtfTp</td>
+
+        <td>varchar(32)</td>
+
+        <td></td>
+
+        <td>None</td>
+
+        <td>NO</td>
+
+        <td></td>
+    </tr>
+    
+    <tr>
+        <td>CtfId</td>
+
+        <td>varchar(64)</td>
+
+        <td></td>
+
+        <td>None</td>
+
+        <td>NO</td>
+
+        <td></td>
+    </tr>
+    
+    <tr>
+        <td>Gender</td>
+
+        <td>varchar(2)</td>
+
+        <td></td>
+
+        <td>None</td>
+
+        <td>NO</td>
+
+        <td></td>
+    </tr>
+    
+    <tr>
+        <td>Birthday</td>
+
+        <td>varchar(16)</td>
+
+        <td></td>
+
+        <td>None</td>
+
+        <td>NO</td>
+
+        <td></td>
+    </tr>
+    
+    <tr>
+        <td>Address</td>
+
+        <td>varchar(128)</td>
+
+        <td></td>
+
+        <td>None</td>
+
+        <td>NO</td>
+
+        <td></td>
+    </tr>
+    
+    <tr>
+        <td>Zip</td>
+
+        <td>varchar(60)</td>
+
+        <td></td>
+
+        <td>None</td>
+
+        <td>NO</td>
+
+        <td></td>
+    </tr>
+    
+    <tr>
+        <td>Dirty</td>
+
+        <td>varchar(60)</td>
+
+        <td></td>
+
+        <td>None</td>
+
+        <td>NO</td>
+
+        <td></td>
+    </tr>
+    
+    <tr>
+        <td>District1</td>
+
+        <td>varchar(60)</td>
+
+        <td></td>
+
+        <td>None</td>
+
+        <td>NO</td>
+
+        <td></td>
+    </tr>
+    
+    <tr>
+        <td>District2</td>
+
+        <td>varchar(60)</td>
+
+        <td></td>
+
+        <td>None</td>
+
+        <td>NO</td>
+
+        <td></td>
+    </tr>
+    
+    <tr>
+        <td>District3</td>
+
+        <td>varchar(60)</td>
+
+        <td></td>
+
+        <td>None</td>
+
+        <td>NO</td>
+
+        <td></td>
+    </tr>
+    
+    <tr>
+        <td>District4</td>
+
+        <td>varchar(60)</td>
+
+        <td></td>
+
+        <td>None</td>
+
+        <td>NO</td>
+
+        <td></td>
+    </tr>
+    
+    <tr>
+        <td>District5</td>
+
+        <td>varchar(60)</td>
+
+        <td></td>
+
+        <td>None</td>
+
+        <td>NO</td>
+
+        <td></td>
+    </tr>
+    
+    <tr>
+        <td>District6</td>
+
+        <td>varchar(60)</td>
+
+        <td></td>
+
+        <td>None</td>
+
+        <td>NO</td>
+
+        <td></td>
+    </tr>
+    
+    <tr>
+        <td>FirstNm</td>
+
+        <td>varchar(60)</td>
+
+        <td></td>
+
+        <td>None</td>
+
+        <td>NO</td>
+
+        <td></td>
+    </tr>
+    
+    <tr>
+        <td>LastNm</td>
+
+        <td>varchar(60)</td>
+
+        <td></td>
+
+        <td>None</td>
+
+        <td>NO</td>
+
+        <td></td>
+    </tr>
+    
+    <tr>
+        <td>Duty</td>
+
+        <td>varchar(60)</td>
+
+        <td></td>
+
+        <td>None</td>
+
+        <td>NO</td>
+
+        <td></td>
+    </tr>
+    
+    <tr>
+        <td>Mobile</td>
+
+        <td>varchar(60)</td>
+
+        <td></td>
+
+        <td>None</td>
+
+        <td>NO</td>
+
+        <td></td>
+    </tr>
+    
+    <tr>
+        <td>Tel</td>
+
+        <td>varchar(60)</td>
+
+        <td></td>
+
+        <td>None</td>
+
+        <td>NO</td>
+
+        <td></td>
+    </tr>
+    
+    <tr>
+        <td>Fax</td>
+
+        <td>varchar(60)</td>
+
+        <td></td>
+
+        <td>None</td>
+
+        <td>NO</td>
+
+        <td></td>
+    </tr>
+    
+    <tr>
+        <td>EMail</td>
+
+        <td>varchar(60)</td>
+
+        <td></td>
+
+        <td>None</td>
+
+        <td>NO</td>
+
+        <td></td>
+    </tr>
+    
+    <tr>
+        <td>Nation</td>
+
+        <td>varchar(60)</td>
+
+        <td></td>
+
+        <td>None</td>
+
+        <td>NO</td>
+
+        <td></td>
+    </tr>
+    
+    <tr>
+        <td>Taste</td>
+
+        <td>varchar(60)</td>
+
+        <td></td>
+
+        <td>None</td>
+
+        <td>NO</td>
+
+        <td></td>
+    </tr>
+    
+    <tr>
+        <td>Education</td>
+
+        <td>varchar(60)</td>
+
+        <td></td>
+
+        <td>None</td>
+
+        <td>NO</td>
+
+        <td></td>
+    </tr>
+    
+    <tr>
+        <td>Company</td>
+
+        <td>varchar(60)</td>
+
+        <td></td>
+
+        <td>None</td>
+
+        <td>NO</td>
+
+        <td></td>
+    </tr>
+    
+    <tr>
+        <td>CTel</td>
+
+        <td>varchar(60)</td>
+
+        <td></td>
+
+        <td>None</td>
+
+        <td>NO</td>
+
+        <td></td>
+    </tr>
+    
+    <tr>
+        <td>CAddress</td>
+
+        <td>varchar(60)</td>
+
+        <td></td>
+
+        <td>None</td>
+
+        <td>NO</td>
+
+        <td></td>
+    </tr>
+    
+    <tr>
+        <td>CZip</td>
+
+        <td>varchar(60)</td>
+
+        <td></td>
+
+        <td>None</td>
+
+        <td>NO</td>
+
+        <td></td>
+    </tr>
+    
+    <tr>
+        <td>Family</td>
+
+        <td>varchar(60)</td>
+
+        <td></td>
+
+        <td>None</td>
+
+        <td>NO</td>
+
+        <td></td>
+    </tr>
+    
+    <tr>
+        <td>Version</td>
+
+        <td>varchar(60)</td>
+
+        <td></td>
+
+        <td>None</td>
+
+        <td>NO</td>
+
+        <td></td>
+    </tr>
+    
+
+</table>
+<br>
+<br>
+
+
+
+<p align="center"> 表: user_reg_code </p>
+<table>
+    <tr>
+        <th>字段名</th>
+
+        <th>类型</th>
+
+        <th>索引</th>
+
+        <th>默认值</th>
+
+        <th>允许为空</th>
+
+        <th>注释</th>
+    </tr>
+    
+    <tr>
+        <td>id</td>
+
+        <td>varchar(36)</td>
+
+        <td>PRI</td>
+
+        <td>None</td>
+
+        <td>NO</td>
+
+        <td></td>
+    </tr>
+    
+    <tr>
+        <td>user_id</td>
+
+        <td>varchar(36)</td>
+
+        <td></td>
+
+        <td>None</td>
+
+        <td>NO</td>
+
+        <td></td>
+    </tr>
+    
+    <tr>
+        <td>reg_code</td>
+
+        <td>varchar(36)</td>
+
+        <td></td>
+
+        <td>None</td>
+
+        <td>NO</td>
+
+        <td></td>
+    </tr>
+    
+    <tr>
+        <td>created_time</td>
+
+        <td>datetime(6)</td>
+
+        <td></td>
+
+        <td>None</td>
+
+        <td>NO</td>
+
+        <td></td>
+    </tr>
+    
+
+</table>
+<br>
+<br>
+
+
+
+
+</body>
+
+</html>

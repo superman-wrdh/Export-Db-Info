@@ -1,0 +1,2337 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title> 数据库:开发数据库</title>
+    <style type="text/css">
+        table {
+            width: 90%;
+            background: #ccc;
+            margin: 10px auto;
+            border-collapse: collapse;
+        }
+
+        th, td {
+            height: 25px;
+            line-height: 25px;
+            text-align: center;
+            border: 1px solid #ccc;
+        }
+
+        th {
+            background: #eee;
+            font-weight: normal;
+        }
+
+        tr {
+            background: #fff;
+        }
+
+        tr:hover {
+            background: #cc0;
+        }
+
+        td tr {
+            color: #06f;
+            text-decoration: none;
+        }
+
+        td tr:hover {
+            color: #06f;
+            text-decoration: underline;
+        }
+    </style>
+</head>
+
+<body>
+<h1 align="center"> 数据库: <span style="color:red"> 开发数据库【cgs】</span> &nbsp;共「11」张表</h1>
+
+
+
+<p align="center"> 表: activation_code </p>
+<table>
+    <tr>
+        <th>字段名</th>
+
+        <th>类型</th>
+
+        <th>索引</th>
+
+        <th>默认值</th>
+
+        <th>允许为空</th>
+
+        <th>注释</th>
+    </tr>
+    
+    <tr>
+        <td>id</td>
+
+        <td>char(36)</td>
+
+        <td>PRI</td>
+
+        <td>None</td>
+
+        <td>NO</td>
+
+        <td>激活码</td>
+    </tr>
+    
+    <tr>
+        <td>user_id</td>
+
+        <td>char(36)</td>
+
+        <td></td>
+
+        <td>None</td>
+
+        <td>YES</td>
+
+        <td>用户id</td>
+    </tr>
+    
+    <tr>
+        <td>is_used</td>
+
+        <td>tinyint(1)</td>
+
+        <td></td>
+
+        <td>None</td>
+
+        <td>YES</td>
+
+        <td>是否使用</td>
+    </tr>
+    
+    <tr>
+        <td>created_time</td>
+
+        <td>datetime</td>
+
+        <td></td>
+
+        <td>None</td>
+
+        <td>YES</td>
+
+        <td>生成时间</td>
+    </tr>
+    
+
+</table>
+<br>
+<br>
+
+
+
+<p align="center"> 表: company </p>
+<table>
+    <tr>
+        <th>字段名</th>
+
+        <th>类型</th>
+
+        <th>索引</th>
+
+        <th>默认值</th>
+
+        <th>允许为空</th>
+
+        <th>注释</th>
+    </tr>
+    
+    <tr>
+        <td>id</td>
+
+        <td>char(36)</td>
+
+        <td>PRI</td>
+
+        <td>None</td>
+
+        <td>NO</td>
+
+        <td>唯一id</td>
+    </tr>
+    
+    <tr>
+        <td>name</td>
+
+        <td>varchar(128)</td>
+
+        <td></td>
+
+        <td>None</td>
+
+        <td>YES</td>
+
+        <td>公司名字</td>
+    </tr>
+    
+    <tr>
+        <td>describe</td>
+
+        <td>varchar(512)</td>
+
+        <td></td>
+
+        <td>None</td>
+
+        <td>YES</td>
+
+        <td>描叙</td>
+    </tr>
+    
+    <tr>
+        <td>created_time</td>
+
+        <td>timestamp</td>
+
+        <td></td>
+
+        <td>CURRENT_TIMESTAMP</td>
+
+        <td>YES</td>
+
+        <td>创建时间</td>
+    </tr>
+    
+    <tr>
+        <td>updated_time</td>
+
+        <td>timestamp</td>
+
+        <td></td>
+
+        <td>CURRENT_TIMESTAMP</td>
+
+        <td>YES</td>
+
+        <td>修改时间</td>
+    </tr>
+    
+
+</table>
+<br>
+<br>
+
+
+
+<p align="center"> 表: department </p>
+<table>
+    <tr>
+        <th>字段名</th>
+
+        <th>类型</th>
+
+        <th>索引</th>
+
+        <th>默认值</th>
+
+        <th>允许为空</th>
+
+        <th>注释</th>
+    </tr>
+    
+    <tr>
+        <td>id</td>
+
+        <td>char(36)</td>
+
+        <td>PRI</td>
+
+        <td>None</td>
+
+        <td>NO</td>
+
+        <td>唯一id</td>
+    </tr>
+    
+    <tr>
+        <td>name</td>
+
+        <td>varchar(128)</td>
+
+        <td></td>
+
+        <td>None</td>
+
+        <td>NO</td>
+
+        <td>部门名称</td>
+    </tr>
+    
+    <tr>
+        <td>describe</td>
+
+        <td>varchar(512)</td>
+
+        <td></td>
+
+        <td>None</td>
+
+        <td>YES</td>
+
+        <td>描叙</td>
+    </tr>
+    
+    <tr>
+        <td>company_id</td>
+
+        <td>char(36)</td>
+
+        <td></td>
+
+        <td>None</td>
+
+        <td>NO</td>
+
+        <td>部门所属公司id</td>
+    </tr>
+    
+    <tr>
+        <td>created_time</td>
+
+        <td>datetime</td>
+
+        <td></td>
+
+        <td>None</td>
+
+        <td>YES</td>
+
+        <td>创建时间</td>
+    </tr>
+    
+    <tr>
+        <td>updated_time</td>
+
+        <td>datetime</td>
+
+        <td></td>
+
+        <td>None</td>
+
+        <td>YES</td>
+
+        <td>修改时间</td>
+    </tr>
+    
+
+</table>
+<br>
+<br>
+
+
+
+<p align="center"> 表: operation_log </p>
+<table>
+    <tr>
+        <th>字段名</th>
+
+        <th>类型</th>
+
+        <th>索引</th>
+
+        <th>默认值</th>
+
+        <th>允许为空</th>
+
+        <th>注释</th>
+    </tr>
+    
+    <tr>
+        <td>id</td>
+
+        <td>char(36)</td>
+
+        <td>PRI</td>
+
+        <td>None</td>
+
+        <td>NO</td>
+
+        <td></td>
+    </tr>
+    
+    <tr>
+        <td>operator_id</td>
+
+        <td>char(36)</td>
+
+        <td></td>
+
+        <td>None</td>
+
+        <td>YES</td>
+
+        <td></td>
+    </tr>
+    
+    <tr>
+        <td>remark</td>
+
+        <td>varchar(256)</td>
+
+        <td></td>
+
+        <td>None</td>
+
+        <td>YES</td>
+
+        <td></td>
+    </tr>
+    
+    <tr>
+        <td>created_time</td>
+
+        <td>datetime</td>
+
+        <td></td>
+
+        <td>None</td>
+
+        <td>YES</td>
+
+        <td></td>
+    </tr>
+    
+
+</table>
+<br>
+<br>
+
+
+
+<p align="center"> 表: resources </p>
+<table>
+    <tr>
+        <th>字段名</th>
+
+        <th>类型</th>
+
+        <th>索引</th>
+
+        <th>默认值</th>
+
+        <th>允许为空</th>
+
+        <th>注释</th>
+    </tr>
+    
+    <tr>
+        <td>id</td>
+
+        <td>char(36)</td>
+
+        <td>PRI</td>
+
+        <td>None</td>
+
+        <td>NO</td>
+
+        <td>文件id</td>
+    </tr>
+    
+    <tr>
+        <td>user_id</td>
+
+        <td>char(36)</td>
+
+        <td>MUL</td>
+
+        <td>None</td>
+
+        <td>NO</td>
+
+        <td>用户id</td>
+    </tr>
+    
+    <tr>
+        <td>content_type</td>
+
+        <td>varchar(60)</td>
+
+        <td></td>
+
+        <td>None</td>
+
+        <td>YES</td>
+
+        <td>文件类型</td>
+    </tr>
+    
+    <tr>
+        <td>file_name</td>
+
+        <td>varchar(128)</td>
+
+        <td></td>
+
+        <td>None</td>
+
+        <td>YES</td>
+
+        <td></td>
+    </tr>
+    
+    <tr>
+        <td>original_file_name</td>
+
+        <td>varchar(255)</td>
+
+        <td></td>
+
+        <td>None</td>
+
+        <td>NO</td>
+
+        <td>文件原始名字</td>
+    </tr>
+    
+    <tr>
+        <td>remark</td>
+
+        <td>varchar(255)</td>
+
+        <td></td>
+
+        <td>None</td>
+
+        <td>YES</td>
+
+        <td>标记</td>
+    </tr>
+    
+    <tr>
+        <td>data_size</td>
+
+        <td>int(11)</td>
+
+        <td></td>
+
+        <td>None</td>
+
+        <td>NO</td>
+
+        <td>文件大小</td>
+    </tr>
+    
+    <tr>
+        <td>created_time</td>
+
+        <td>datetime</td>
+
+        <td></td>
+
+        <td>None</td>
+
+        <td>YES</td>
+
+        <td>生产日期</td>
+    </tr>
+    
+
+</table>
+<br>
+<br>
+
+
+
+<p align="center"> 表: review_log </p>
+<table>
+    <tr>
+        <th>字段名</th>
+
+        <th>类型</th>
+
+        <th>索引</th>
+
+        <th>默认值</th>
+
+        <th>允许为空</th>
+
+        <th>注释</th>
+    </tr>
+    
+    <tr>
+        <td>id</td>
+
+        <td>char(255)</td>
+
+        <td>PRI</td>
+
+        <td>None</td>
+
+        <td>NO</td>
+
+        <td></td>
+    </tr>
+    
+    <tr>
+        <td>name</td>
+
+        <td>varchar(128)</td>
+
+        <td></td>
+
+        <td>None</td>
+
+        <td>YES</td>
+
+        <td></td>
+    </tr>
+    
+    <tr>
+        <td>account</td>
+
+        <td>varchar(64)</td>
+
+        <td></td>
+
+        <td>None</td>
+
+        <td>YES</td>
+
+        <td></td>
+    </tr>
+    
+    <tr>
+        <td>status</td>
+
+        <td>char(4)</td>
+
+        <td></td>
+
+        <td>None</td>
+
+        <td>YES</td>
+
+        <td></td>
+    </tr>
+    
+    <tr>
+        <td>created_time</td>
+
+        <td>datetime</td>
+
+        <td></td>
+
+        <td>None</td>
+
+        <td>YES</td>
+
+        <td></td>
+    </tr>
+    
+    <tr>
+        <td>updated_time</td>
+
+        <td>datetime</td>
+
+        <td></td>
+
+        <td>None</td>
+
+        <td>YES</td>
+
+        <td></td>
+    </tr>
+    
+
+</table>
+<br>
+<br>
+
+
+
+<p align="center"> 表: security_position_summary </p>
+<table>
+    <tr>
+        <th>字段名</th>
+
+        <th>类型</th>
+
+        <th>索引</th>
+
+        <th>默认值</th>
+
+        <th>允许为空</th>
+
+        <th>注释</th>
+    </tr>
+    
+    <tr>
+        <td>ASSET_ACCT</td>
+
+        <td>varchar(50)</td>
+
+        <td>PRI</td>
+
+        <td></td>
+
+        <td>NO</td>
+
+        <td>资产账号</td>
+    </tr>
+    
+    <tr>
+        <td>BIZ_DATE</td>
+
+        <td>date</td>
+
+        <td>PRI</td>
+
+        <td>None</td>
+
+        <td>NO</td>
+
+        <td>业务日期</td>
+    </tr>
+    
+    <tr>
+        <td>BUY_COST</td>
+
+        <td>decimal(19,5)</td>
+
+        <td></td>
+
+        <td>None</td>
+
+        <td>YES</td>
+
+        <td>买入成本</td>
+    </tr>
+    
+    <tr>
+        <td>CRRC_CODE</td>
+
+        <td>varchar(30)</td>
+
+        <td></td>
+
+        <td>None</td>
+
+        <td>YES</td>
+
+        <td>买入成本</td>
+    </tr>
+    
+    <tr>
+        <td>CUST_NAME</td>
+
+        <td>varchar(80)</td>
+
+        <td></td>
+
+        <td>None</td>
+
+        <td>YES</td>
+
+        <td>客户名称</td>
+    </tr>
+    
+    <tr>
+        <td>CUST_NO</td>
+
+        <td>varchar(50)</td>
+
+        <td>PRI</td>
+
+        <td>None</td>
+
+        <td>NO</td>
+
+        <td>客户编号</td>
+    </tr>
+    
+    <tr>
+        <td>FLOAT_PL</td>
+
+        <td>decimal(22,3)</td>
+
+        <td></td>
+
+        <td>None</td>
+
+        <td>YES</td>
+
+        <td>浮动盈亏</td>
+    </tr>
+    
+    <tr>
+        <td>LAST_PRICE</td>
+
+        <td>decimal(19,4)</td>
+
+        <td></td>
+
+        <td>None</td>
+
+        <td>YES</td>
+
+        <td>最新收盘价</td>
+    </tr>
+    
+    <tr>
+        <td>NEW_SEC_CATE</td>
+
+        <td>varchar(30)</td>
+
+        <td></td>
+
+        <td>None</td>
+
+        <td>NO</td>
+
+        <td>新政券类别</td>
+    </tr>
+    
+    <tr>
+        <td>ORG_NO</td>
+
+        <td>varchar(30)</td>
+
+        <td></td>
+
+        <td>None</td>
+
+        <td>YES</td>
+
+        <td>机构编号</td>
+    </tr>
+    
+    <tr>
+        <td>SEC_ABBR</td>
+
+        <td>varchar(80)</td>
+
+        <td></td>
+
+        <td>None</td>
+
+        <td>YES</td>
+
+        <td>政券简称</td>
+    </tr>
+    
+    <tr>
+        <td>SEC_CATE</td>
+
+        <td>varchar(30)</td>
+
+        <td>PRI</td>
+
+        <td>None</td>
+
+        <td>NO</td>
+
+        <td>证券类别</td>
+    </tr>
+    
+    <tr>
+        <td>SEC_MKT_VAL</td>
+
+        <td>decimal(19,2)</td>
+
+        <td></td>
+
+        <td>None</td>
+
+        <td>YES</td>
+
+        <td>证券市值</td>
+    </tr>
+    
+    <tr>
+        <td>SHARES_BAL</td>
+
+        <td>decimal(19,2)</td>
+
+        <td></td>
+
+        <td>None</td>
+
+        <td>YES</td>
+
+        <td>股份余额</td>
+    </tr>
+    
+    <tr>
+        <td>SHARES_FRZ_NUM_VOL</td>
+
+        <td>decimal(19,5)</td>
+
+        <td></td>
+
+        <td>None</td>
+
+        <td>YES</td>
+
+        <td>股份冻结数量</td>
+    </tr>
+    
+    <tr>
+        <td>SHARES_NATURE</td>
+
+        <td>varchar(30)</td>
+
+        <td></td>
+
+        <td>None</td>
+
+        <td>YES</td>
+
+        <td>股份性质（1:持仓;2:抵押;3:负债;4:限售;）</td>
+    </tr>
+    
+    <tr>
+        <td>SHARES_NFRZ_QTY</td>
+
+        <td>varchar(19)</td>
+
+        <td></td>
+
+        <td>None</td>
+
+        <td>YES</td>
+
+        <td>股份解冻数量</td>
+    </tr>
+    
+    <tr>
+        <td>SHARES_USABLE_BAL</td>
+
+        <td>decimal(19,2)</td>
+
+        <td></td>
+
+        <td>None</td>
+
+        <td>YES</td>
+
+        <td>股份可用余额</td>
+    </tr>
+    
+    <tr>
+        <td>SHT_SELL_CUST_SURPLUS_STK_QTY</td>
+
+        <td>decimal(19,2)</td>
+
+        <td></td>
+
+        <td>None</td>
+
+        <td>YES</td>
+
+        <td>融券客户余券数量</td>
+    </tr>
+    
+    <tr>
+        <td>STK_CODE</td>
+
+        <td>varchar(30)</td>
+
+        <td>PRI</td>
+
+        <td>None</td>
+
+        <td>NO</td>
+
+        <td>证券代码</td>
+    </tr>
+    
+    <tr>
+        <td>SYS_CODE</td>
+
+        <td>varchar(30)</td>
+
+        <td>PRI</td>
+
+        <td>None</td>
+
+        <td>NO</td>
+
+        <td>CBS(集中交易)、MTS(融资融券)、SOP(个股期权)、OTC(OTC三方存管)、LC(OTC理财)</td>
+    </tr>
+    
+    <tr>
+        <td>TRD_MKT_CODE</td>
+
+        <td>varchar(30)</td>
+
+        <td>PRI</td>
+
+        <td>None</td>
+
+        <td>NO</td>
+
+        <td>交易市场代码</td>
+    </tr>
+    
+    <tr>
+        <td>created_time</td>
+
+        <td>timestamp</td>
+
+        <td></td>
+
+        <td>CURRENT_TIMESTAMP</td>
+
+        <td>YES</td>
+
+        <td></td>
+    </tr>
+    
+    <tr>
+        <td>updated_time</td>
+
+        <td>timestamp</td>
+
+        <td></td>
+
+        <td>CURRENT_TIMESTAMP</td>
+
+        <td>YES</td>
+
+        <td></td>
+    </tr>
+    
+
+</table>
+<br>
+<br>
+
+
+
+<p align="center"> 表: security_transaction </p>
+<table>
+    <tr>
+        <th>字段名</th>
+
+        <th>类型</th>
+
+        <th>索引</th>
+
+        <th>默认值</th>
+
+        <th>允许为空</th>
+
+        <th>注释</th>
+    </tr>
+    
+    <tr>
+        <td>ASSET_ACCT</td>
+
+        <td>varchar(50)</td>
+
+        <td>PRI</td>
+
+        <td>None</td>
+
+        <td>NO</td>
+
+        <td>资产账号</td>
+    </tr>
+    
+    <tr>
+        <td>ASSET_STAPLE_CODE</td>
+
+        <td>varchar(30)</td>
+
+        <td></td>
+
+        <td>None</td>
+
+        <td>YES</td>
+
+        <td>资产分档代码</td>
+    </tr>
+    
+    <tr>
+        <td>AVG_ASSET_STAPLE_CODE</td>
+
+        <td>varchar(30)</td>
+
+        <td></td>
+
+        <td>None</td>
+
+        <td>NO</td>
+
+        <td>日均资产分档代码</td>
+    </tr>
+    
+    <tr>
+        <td>BIZ_CATALOG</td>
+
+        <td>varchar(30)</td>
+
+        <td>PRI</td>
+
+        <td>None</td>
+
+        <td>NO</td>
+
+        <td>业务大类</td>
+    </tr>
+    
+    <tr>
+        <td>BIZ_DATE</td>
+
+        <td>date</td>
+
+        <td>PRI</td>
+
+        <td>None</td>
+
+        <td>NO</td>
+
+        <td>业务日期</td>
+    </tr>
+    
+    <tr>
+        <td>BROKER_NO</td>
+
+        <td>varchar(80)</td>
+
+        <td>PRI</td>
+
+        <td>None</td>
+
+        <td>NO</td>
+
+        <td>经纪人编号</td>
+    </tr>
+    
+    <tr>
+        <td>BS_CATE</td>
+
+        <td>varchar(30)</td>
+
+        <td>PRI</td>
+
+        <td>None</td>
+
+        <td>NO</td>
+
+        <td>买卖类别</td>
+    </tr>
+    
+    <tr>
+        <td>CLR_FEE</td>
+
+        <td>decimal(19,2)</td>
+
+        <td></td>
+
+        <td>None</td>
+
+        <td>YES</td>
+
+        <td>清算费</td>
+    </tr>
+    
+    <tr>
+        <td>CMS</td>
+
+        <td>decimal(19,2)</td>
+
+        <td></td>
+
+        <td>None</td>
+
+        <td>YES</td>
+
+        <td>佣金</td>
+    </tr>
+    
+    <tr>
+        <td>CPTL_CLASS</td>
+
+        <td>varchar(30)</td>
+
+        <td>PRI</td>
+
+        <td>None</td>
+
+        <td>NO</td>
+
+        <td>资金分类</td>
+    </tr>
+    
+    <tr>
+        <td>CPTL_GRP</td>
+
+        <td>varchar(30)</td>
+
+        <td></td>
+
+        <td>None</td>
+
+        <td>YES</td>
+
+        <td>资金分组</td>
+    </tr>
+    
+    <tr>
+        <td>CPTL_OCCUR_NUM</td>
+
+        <td>decimal(19,2)</td>
+
+        <td></td>
+
+        <td>None</td>
+
+        <td>YES</td>
+
+        <td>资金发生数：发生额(元)(资金流水)</td>
+    </tr>
+    
+    <tr>
+        <td>CPTL_ROOM_NO</td>
+
+        <td>varchar(30)</td>
+
+        <td>PRI</td>
+
+        <td>None</td>
+
+        <td>NO</td>
+
+        <td>资产账号</td>
+    </tr>
+    
+    <tr>
+        <td>CPTL_STAPLE_CODE</td>
+
+        <td>varchar(30)</td>
+
+        <td></td>
+
+        <td>None</td>
+
+        <td>YES</td>
+
+        <td>资金分档代码</td>
+    </tr>
+    
+    <tr>
+        <td>CPTL_THIS_BAL</td>
+
+        <td>decimal(19,2)</td>
+
+        <td></td>
+
+        <td>None</td>
+
+        <td>YES</td>
+
+        <td>资金本次余额</td>
+    </tr>
+    
+    <tr>
+        <td>CRD_ACCT_FLAG</td>
+
+        <td>varchar(30)</td>
+
+        <td></td>
+
+        <td>None</td>
+
+        <td>NO</td>
+
+        <td>信用账户标志</td>
+    </tr>
+    
+    <tr>
+        <td>CRRC_CODE</td>
+
+        <td>varchar(50)</td>
+
+        <td></td>
+
+        <td>None</td>
+
+        <td>YES</td>
+
+        <td>币种代码：人民币、美元、港币、欧元、英镑、日元、新台币等【默认人民币】</td>
+    </tr>
+    
+    <tr>
+        <td>CUST_CATE</td>
+
+        <td>varchar(30)</td>
+
+        <td>PRI</td>
+
+        <td>None</td>
+
+        <td>NO</td>
+
+        <td>客户类别</td>
+    </tr>
+    
+    <tr>
+        <td>CUST_GRP</td>
+
+        <td>varchar(30)</td>
+
+        <td></td>
+
+        <td>None</td>
+
+        <td>YES</td>
+
+        <td>客户分组</td>
+    </tr>
+    
+    <tr>
+        <td>CUST_MAG</td>
+
+        <td>varchar(30)</td>
+
+        <td></td>
+
+        <td>None</td>
+
+        <td>YES</td>
+
+        <td>客户经理</td>
+    </tr>
+    
+    <tr>
+        <td>CUST_NAME</td>
+
+        <td>varchar(80)</td>
+
+        <td></td>
+
+        <td>None</td>
+
+        <td>YES</td>
+
+        <td>客户名称</td>
+    </tr>
+    
+    <tr>
+        <td>CUST_NO</td>
+
+        <td>varchar(50)</td>
+
+        <td></td>
+
+        <td>None</td>
+
+        <td>YES</td>
+
+        <td>客户编号</td>
+    </tr>
+    
+    <tr>
+        <td>FIN_KIND_ID</td>
+
+        <td>char(1)</td>
+
+        <td></td>
+
+        <td>None</td>
+
+        <td>YES</td>
+
+        <td>融资品种标识</td>
+    </tr>
+    
+    <tr>
+        <td>MATCH_AMT</td>
+
+        <td>decimal(19,2)</td>
+
+        <td></td>
+
+        <td>None</td>
+
+        <td>YES</td>
+
+        <td>成交金额</td>
+    </tr>
+    
+    <tr>
+        <td>MATCH_PLOT</td>
+
+        <td>int(8)</td>
+
+        <td></td>
+
+        <td>None</td>
+
+        <td>YES</td>
+
+        <td>成交笔数</td>
+    </tr>
+    
+    <tr>
+        <td>MATCH_PRICE</td>
+
+        <td>decimal(19,5)</td>
+
+        <td></td>
+
+        <td>None</td>
+
+        <td>YES</td>
+
+        <td>成交价格</td>
+    </tr>
+    
+    <tr>
+        <td>MATCH_QTY</td>
+
+        <td>decimal(19,2)</td>
+
+        <td></td>
+
+        <td>None</td>
+
+        <td>YES</td>
+
+        <td>成交数量</td>
+    </tr>
+    
+    <tr>
+        <td>MATCH_TIME</td>
+
+        <td>varchar(8)</td>
+
+        <td></td>
+
+        <td>None</td>
+
+        <td>YES</td>
+
+        <td>成交时间：时-分-秒</td>
+    </tr>
+    
+    <tr>
+        <td>NET_COMM</td>
+
+        <td>decimal(19,2)</td>
+
+        <td></td>
+
+        <td>None</td>
+
+        <td>YES</td>
+
+        <td>净佣金</td>
+    </tr>
+    
+    <tr>
+        <td>OP_ACCT_DATE</td>
+
+        <td>int(8)</td>
+
+        <td></td>
+
+        <td>None</td>
+
+        <td>YES</td>
+
+        <td>开户日期</td>
+    </tr>
+    
+    <tr>
+        <td>ORG_AFFLIATE_NO</td>
+
+        <td>varchar(30)</td>
+
+        <td></td>
+
+        <td>None</td>
+
+        <td>YES</td>
+
+        <td>机构分支编号</td>
+    </tr>
+    
+    <tr>
+        <td>ORG_NO</td>
+
+        <td>varchar(30)</td>
+
+        <td></td>
+
+        <td>None</td>
+
+        <td>YES</td>
+
+        <td>机构编号</td>
+    </tr>
+    
+    <tr>
+        <td>ORIG_BS_CATE</td>
+
+        <td>varchar(30)</td>
+
+        <td></td>
+
+        <td>None</td>
+
+        <td>YES</td>
+
+        <td>原买卖类别</td>
+    </tr>
+    
+    <tr>
+        <td>ORIG_CPTL_GRP</td>
+
+        <td>varchar(30)</td>
+
+        <td></td>
+
+        <td>None</td>
+
+        <td>YES</td>
+
+        <td>原资金分组</td>
+    </tr>
+    
+    <tr>
+        <td>ORIG_SEC_CATE</td>
+
+        <td>varchar(30)</td>
+
+        <td></td>
+
+        <td>None</td>
+
+        <td>YES</td>
+
+        <td>原政券类别</td>
+    </tr>
+    
+    <tr>
+        <td>PL_AMT</td>
+
+        <td>decimal(19,2)</td>
+
+        <td></td>
+
+        <td>None</td>
+
+        <td>YES</td>
+
+        <td>盈亏金额</td>
+    </tr>
+    
+    <tr>
+        <td>PRD_CODE</td>
+
+        <td>varchar(30)</td>
+
+        <td></td>
+
+        <td>None</td>
+
+        <td>YES</td>
+
+        <td>资产账号</td>
+    </tr>
+    
+    <tr>
+        <td>SEC_BAL</td>
+
+        <td>decimal(19,2)</td>
+
+        <td></td>
+
+        <td>None</td>
+
+        <td>YES</td>
+
+        <td>证券余额：股票余额（股）</td>
+    </tr>
+    
+    <tr>
+        <td>SEC_CATE</td>
+
+        <td>varchar(30)</td>
+
+        <td>PRI</td>
+
+        <td>None</td>
+
+        <td>NO</td>
+
+        <td>政券类别</td>
+    </tr>
+    
+    <tr>
+        <td>SEC_NAME</td>
+
+        <td>varchar(80)</td>
+
+        <td></td>
+
+        <td>None</td>
+
+        <td>YES</td>
+
+        <td>政券名称</td>
+    </tr>
+    
+    <tr>
+        <td>SEC_OCCUR_NUM</td>
+
+        <td>int(22)</td>
+
+        <td></td>
+
+        <td>None</td>
+
+        <td>YES</td>
+
+        <td>政券发生数</td>
+    </tr>
+    
+    <tr>
+        <td>STK_CODE</td>
+
+        <td>varchar(30)</td>
+
+        <td>PRI</td>
+
+        <td>None</td>
+
+        <td>NO</td>
+
+        <td>政券代码</td>
+    </tr>
+    
+    <tr>
+        <td>STMP_TAX</td>
+
+        <td>decimal(19,0)</td>
+
+        <td></td>
+
+        <td>None</td>
+
+        <td>YES</td>
+
+        <td>印花税</td>
+    </tr>
+    
+    <tr>
+        <td>SYS_CODE</td>
+
+        <td>varchar(30)</td>
+
+        <td>PRI</td>
+
+        <td>None</td>
+
+        <td>NO</td>
+
+        <td>CBS(集中交易)、MTS(融资融券)、SOP(个股期权)、OTC(OTC三方存管)、LC(OTC理财)</td>
+    </tr>
+    
+    <tr>
+        <td>TRANS_FEE</td>
+
+        <td>decimal(19,2)</td>
+
+        <td></td>
+
+        <td>None</td>
+
+        <td>YES</td>
+
+        <td>过户费</td>
+    </tr>
+    
+    <tr>
+        <td>TRD_MKT_CODE</td>
+
+        <td>varchar(30)</td>
+
+        <td>PRI</td>
+
+        <td>None</td>
+
+        <td>NO</td>
+
+        <td>交易市场代码</td>
+    </tr>
+    
+    <tr>
+        <td>TRD_TYPE</td>
+
+        <td>varchar(30)</td>
+
+        <td>PRI</td>
+
+        <td>None</td>
+
+        <td>NO</td>
+
+        <td>交易类型</td>
+    </tr>
+    
+    <tr>
+        <td>entry_time</td>
+
+        <td>timestamp</td>
+
+        <td></td>
+
+        <td>CURRENT_TIMESTAMP</td>
+
+        <td>YES</td>
+
+        <td></td>
+    </tr>
+    
+    <tr>
+        <td>update_time</td>
+
+        <td>timestamp</td>
+
+        <td></td>
+
+        <td>CURRENT_TIMESTAMP</td>
+
+        <td>YES</td>
+
+        <td></td>
+    </tr>
+    
+
+</table>
+<br>
+<br>
+
+
+
+<p align="center"> 表: staff </p>
+<table>
+    <tr>
+        <th>字段名</th>
+
+        <th>类型</th>
+
+        <th>索引</th>
+
+        <th>默认值</th>
+
+        <th>允许为空</th>
+
+        <th>注释</th>
+    </tr>
+    
+    <tr>
+        <td>id</td>
+
+        <td>char(36)</td>
+
+        <td>PRI</td>
+
+        <td>None</td>
+
+        <td>NO</td>
+
+        <td>唯一id</td>
+    </tr>
+    
+    <tr>
+        <td>name</td>
+
+        <td>varchar(64)</td>
+
+        <td></td>
+
+        <td>None</td>
+
+        <td>NO</td>
+
+        <td>姓名</td>
+    </tr>
+    
+    <tr>
+        <td>user_type</td>
+
+        <td>char(16)</td>
+
+        <td></td>
+
+        <td>None</td>
+
+        <td>YES</td>
+
+        <td>用户类型(1-2-3-4-5)</td>
+    </tr>
+    
+    <tr>
+        <td>code</td>
+
+        <td>char(80)</td>
+
+        <td></td>
+
+        <td>None</td>
+
+        <td>NO</td>
+
+        <td>工号</td>
+    </tr>
+    
+    <tr>
+        <td>mail</td>
+
+        <td>varchar(64)</td>
+
+        <td></td>
+
+        <td>None</td>
+
+        <td>NO</td>
+
+        <td>邮箱</td>
+    </tr>
+    
+    <tr>
+        <td>mobile</td>
+
+        <td>char(16)</td>
+
+        <td></td>
+
+        <td>None</td>
+
+        <td>YES</td>
+
+        <td>手机</td>
+    </tr>
+    
+    <tr>
+        <td>department_id</td>
+
+        <td>char(32)</td>
+
+        <td></td>
+
+        <td>None</td>
+
+        <td>NO</td>
+
+        <td>user_type为1,2时候为营业部id 为3时候为company_id</td>
+    </tr>
+    
+    <tr>
+        <td>qualifications</td>
+
+        <td>tinyint(1)</td>
+
+        <td></td>
+
+        <td>None</td>
+
+        <td>YES</td>
+
+        <td>证书编号</td>
+    </tr>
+    
+    <tr>
+        <td>certificate_no</td>
+
+        <td>varchar(64)</td>
+
+        <td></td>
+
+        <td>None</td>
+
+        <td>YES</td>
+
+        <td>证书编号</td>
+    </tr>
+    
+    <tr>
+        <td>password_hash</td>
+
+        <td>varchar(64)</td>
+
+        <td></td>
+
+        <td>None</td>
+
+        <td>YES</td>
+
+        <td>密码哈希</td>
+    </tr>
+    
+    <tr>
+        <td>password_salt</td>
+
+        <td>char(16)</td>
+
+        <td></td>
+
+        <td>None</td>
+
+        <td>YES</td>
+
+        <td></td>
+    </tr>
+    
+    <tr>
+        <td>status</td>
+
+        <td>char(4)</td>
+
+        <td></td>
+
+        <td>None</td>
+
+        <td>YES</td>
+
+        <td>状态(0 未激活——1待审核 2审核通过)</td>
+    </tr>
+    
+    <tr>
+        <td>created_time</td>
+
+        <td>datetime</td>
+
+        <td></td>
+
+        <td>None</td>
+
+        <td>YES</td>
+
+        <td>创建时间</td>
+    </tr>
+    
+    <tr>
+        <td>updated_time</td>
+
+        <td>datetime</td>
+
+        <td></td>
+
+        <td>None</td>
+
+        <td>YES</td>
+
+        <td>修改时间</td>
+    </tr>
+    
+
+</table>
+<br>
+<br>
+
+
+
+<p align="center"> 表: staff_tmp </p>
+<table>
+    <tr>
+        <th>字段名</th>
+
+        <th>类型</th>
+
+        <th>索引</th>
+
+        <th>默认值</th>
+
+        <th>允许为空</th>
+
+        <th>注释</th>
+    </tr>
+    
+    <tr>
+        <td>id</td>
+
+        <td>char(36)</td>
+
+        <td>PRI</td>
+
+        <td>None</td>
+
+        <td>NO</td>
+
+        <td>唯一id</td>
+    </tr>
+    
+    <tr>
+        <td>name</td>
+
+        <td>varchar(64)</td>
+
+        <td></td>
+
+        <td>None</td>
+
+        <td>NO</td>
+
+        <td>姓名</td>
+    </tr>
+    
+    <tr>
+        <td>user_type</td>
+
+        <td>char(16)</td>
+
+        <td></td>
+
+        <td>None</td>
+
+        <td>YES</td>
+
+        <td>用户类型(1-2-3-4-5)</td>
+    </tr>
+    
+    <tr>
+        <td>code</td>
+
+        <td>char(32)</td>
+
+        <td></td>
+
+        <td>None</td>
+
+        <td>NO</td>
+
+        <td>工号</td>
+    </tr>
+    
+    <tr>
+        <td>mail</td>
+
+        <td>varchar(64)</td>
+
+        <td></td>
+
+        <td>None</td>
+
+        <td>NO</td>
+
+        <td>邮箱</td>
+    </tr>
+    
+    <tr>
+        <td>mobile</td>
+
+        <td>char(16)</td>
+
+        <td></td>
+
+        <td>None</td>
+
+        <td>YES</td>
+
+        <td>手机</td>
+    </tr>
+    
+    <tr>
+        <td>department_id</td>
+
+        <td>char(32)</td>
+
+        <td></td>
+
+        <td>None</td>
+
+        <td>NO</td>
+
+        <td>营业部id</td>
+    </tr>
+    
+    <tr>
+        <td>qualifications</td>
+
+        <td>tinyint(1)</td>
+
+        <td></td>
+
+        <td>None</td>
+
+        <td>YES</td>
+
+        <td>证书编号</td>
+    </tr>
+    
+    <tr>
+        <td>certificate_no</td>
+
+        <td>varchar(64)</td>
+
+        <td></td>
+
+        <td>None</td>
+
+        <td>YES</td>
+
+        <td>证书编号</td>
+    </tr>
+    
+    <tr>
+        <td>password_hash</td>
+
+        <td>varchar(64)</td>
+
+        <td></td>
+
+        <td>None</td>
+
+        <td>YES</td>
+
+        <td>密码哈希</td>
+    </tr>
+    
+    <tr>
+        <td>password_salt</td>
+
+        <td>char(16)</td>
+
+        <td></td>
+
+        <td>None</td>
+
+        <td>YES</td>
+
+        <td></td>
+    </tr>
+    
+    <tr>
+        <td>status</td>
+
+        <td>char(4)</td>
+
+        <td></td>
+
+        <td>None</td>
+
+        <td>YES</td>
+
+        <td>状态(0 未激活——1待审核 2审核通过)</td>
+    </tr>
+    
+    <tr>
+        <td>created_time</td>
+
+        <td>datetime</td>
+
+        <td></td>
+
+        <td>None</td>
+
+        <td>YES</td>
+
+        <td>创建时间</td>
+    </tr>
+    
+    <tr>
+        <td>updated_time</td>
+
+        <td>datetime</td>
+
+        <td></td>
+
+        <td>None</td>
+
+        <td>YES</td>
+
+        <td>修改时间</td>
+    </tr>
+    
+
+</table>
+<br>
+<br>
+
+
+
+<p align="center"> 表: user </p>
+<table>
+    <tr>
+        <th>字段名</th>
+
+        <th>类型</th>
+
+        <th>索引</th>
+
+        <th>默认值</th>
+
+        <th>允许为空</th>
+
+        <th>注释</th>
+    </tr>
+    
+    <tr>
+        <td>id</td>
+
+        <td>char(36)</td>
+
+        <td>PRI</td>
+
+        <td>None</td>
+
+        <td>NO</td>
+
+        <td>用户id</td>
+    </tr>
+    
+    <tr>
+        <td>no</td>
+
+        <td>varchar(80)</td>
+
+        <td></td>
+
+        <td>None</td>
+
+        <td>YES</td>
+
+        <td>编号</td>
+    </tr>
+    
+    <tr>
+        <td>staff_id</td>
+
+        <td>char(36)</td>
+
+        <td></td>
+
+        <td>None</td>
+
+        <td>NO</td>
+
+        <td>辅导员id</td>
+    </tr>
+    
+    <tr>
+        <td>name</td>
+
+        <td>varchar(64)</td>
+
+        <td></td>
+
+        <td>None</td>
+
+        <td>YES</td>
+
+        <td>姓名</td>
+    </tr>
+    
+    <tr>
+        <td>status</td>
+
+        <td>char(4)</td>
+
+        <td></td>
+
+        <td>None</td>
+
+        <td>YES</td>
+
+        <td>审核状态</td>
+    </tr>
+    
+    <tr>
+        <td>account</td>
+
+        <td>varchar(80)</td>
+
+        <td></td>
+
+        <td>None</td>
+
+        <td>YES</td>
+
+        <td>资金账号</td>
+    </tr>
+    
+    <tr>
+        <td>remark</td>
+
+        <td>varchar(512)</td>
+
+        <td></td>
+
+        <td>None</td>
+
+        <td>YES</td>
+
+        <td></td>
+    </tr>
+    
+    <tr>
+        <td>apply_time</td>
+
+        <td>datetime</td>
+
+        <td></td>
+
+        <td>None</td>
+
+        <td>YES</td>
+
+        <td>申请时间</td>
+    </tr>
+    
+    <tr>
+        <td>check_time</td>
+
+        <td>datetime</td>
+
+        <td></td>
+
+        <td>None</td>
+
+        <td>YES</td>
+
+        <td>审核时间</td>
+    </tr>
+    
+    <tr>
+        <td>created_time</td>
+
+        <td>datetime</td>
+
+        <td></td>
+
+        <td>None</td>
+
+        <td>YES</td>
+
+        <td>创建时间</td>
+    </tr>
+    
+    <tr>
+        <td>updated_time</td>
+
+        <td>datetime</td>
+
+        <td></td>
+
+        <td>None</td>
+
+        <td>YES</td>
+
+        <td>更新时间</td>
+    </tr>
+    
+
+</table>
+<br>
+<br>
+
+
+
+
+</body>
+
+</html>

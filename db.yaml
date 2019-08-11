@@ -1,0 +1,7 @@
+diyidan-old:
+  name: 我的博客数据库
+  master: {host: 192.168.199.199, port: 3306, user: user, pass: pass, db: study, charset: utf8mb4}
+
+diyidan-system:
+  name: 开发数据库
+  master: {host: 192.168.199.199, port: 3306, user: user, pass: pass, db: cgs, charset: utf8mb4}

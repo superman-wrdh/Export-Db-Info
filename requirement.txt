@@ -1,0 +1,4 @@
+pymysql
+pandas
+pyyaml
+jinja2
