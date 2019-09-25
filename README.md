@@ -1,6 +1,7 @@
 # Export-Db-Info
 ## 获取数据库表结构信息 并输出到markdown/html/pdf
 ## TODO 输出pdf待实现
+## 输出数据库表ddl到文件
 
 ## 用法
 * ### 下载本项目
@@ -15,7 +16,7 @@
 * ### 运行
          python main.py -t html
  
-         -t 参数 可选为html/markdown/pdf
+         -t 参数 可选为html/markdown/pdf/ddl
 
 
 ## 输出markdown 效果如下
