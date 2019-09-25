@@ -1,6 +1,7 @@
 import argparse
 from core.render_markdown import output_md
 from core.render_html import output_html
+from core.export_ddl import output_ddl_sql
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(
@@ -23,5 +24,7 @@ if __name__ == '__main__':
         output_html()
     elif output_type in ('pdf', 'PDF'):
         print("TODO 暂未实现")
+    elif output_type in ('ddl', "DDL"):
+        output_ddl_sql()
     else:
         print("参数错误")
