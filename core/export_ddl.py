@@ -40,7 +40,7 @@ def output_ddl_sql():
                 ddl_sql = ddl_builder.get_ddl(table.get("table_name"))
                 if ddl_sql:
                     file.write(ddl_sql)
-                    file.write("\n\n")
+                    file.write(";\n\n")
             file.close()
         except Exception as e:
             print("exception {}".format(e))
